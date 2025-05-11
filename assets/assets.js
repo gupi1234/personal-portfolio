@@ -36,6 +36,7 @@ import send_icon from './send-icon.png';
 import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
 import verified from './verified.png';
+import logo_app from './logo_app.png';
 
 export const assets = {
   user_image,
@@ -76,6 +77,7 @@ export const assets = {
   right_arrow_bold_dark,
   profile_photo,
   verified,
+  logo_app,
 };
 
 export const workData = [
