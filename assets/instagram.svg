@@ -1,0 +1,14 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  className="absolute bottom-1 right-1"
+>
+  <circle cx="12" cy="12" r="10" fill="#1DA1F2" />
+  <path
+    fill="#fff"
+    d="M10.2 13.8L8.4 12l-1 1 2.8 2.8 6-6-1-1-5 5z"
+  />
+</svg>
