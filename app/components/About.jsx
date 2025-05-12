@@ -1,7 +1,7 @@
 import React from 'react';
 import { Ovo } from 'next/font/google';
 import Image from 'next/image';
-import { assets, infoList } from '@/assets/assets';
+import { assets, infoList, toolsData } from '@/assets/assets';
 
 const ovo = Ovo({
   subsets: ['latin'],
@@ -10,7 +10,7 @@ const ovo = Ovo({
 
 const About = () => {
   return (
-    <div id="about" className="w-full  px-[12%] py-10 scroll-mt-20">
+    <div id="about" className="w-full  px-[12%] py-2 scroll-mt-20">
       <h4 className={`text-center mb-2 text-lg ${ovo.className}`}>
         Introductions
       </h4>
@@ -22,8 +22,8 @@ const About = () => {
             src={assets.user_image}
             alt="User"
             className="w-60 sm:w-80  rounded-tr-[90px] rounded-tl-[30px] 
-              rounded-bl-[70px] rounded-br-[30px] object-cover shadow-xl
-                transform transition-all duration-500 hover:scale-105 hover:rotate-1 hover:shadow-2xl border-3 border-blue-300"
+                rounded-bl-[70px] rounded-br-[30px] object-cover shadow-xl
+                  hover:scale-105 hover:-translate-y-1  duration-1000 hover:shadow-2xl border-3 border-blue-300"
           />
         </div>
         <div className="flex-1">
@@ -40,7 +40,7 @@ const About = () => {
             {infoList.map(({ icon, iconDark, title, description }, index) => (
               <li
                 key={index}
-                className="border-2 border-gray-400 rounded-xl p-6 cursor-pointer"
+                className="border-2 border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-blackCustom"
               >
                 <Image
                   src={icon}
@@ -48,7 +48,29 @@ const About = () => {
                   className="w-6 h-6 inline-block mr-2 mt-3"
                 />
                 <h3 className="my-4 font-semibold text-gray-700 ">{title}</h3>
-                <p className="text-gray-600 text-sm">{description}</p>
+                <p className="text-gray-600 text-sm hover:text-gray-800 duration-300">
+                  {description}
+                </p>
+              </li>
+            ))}
+          </ul>
+          <h4
+            className="my-6 text-gray-700 font-bold "
+            style={{ fontFamily: 'Ovo', sansSerif: 'sans-serif' }}
+          >
+            Tools i Use
+          </h4>
+          <ul className=" flex items-center gap-3 sm:gap-5">
+            {toolsData.map((tool, index) => (
+              <li
+                key={index}
+                className="flex items-center justify-center w-8 sm:w-12 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:bg-lightHover hover:translate-y-1 duration-500"
+              >
+                <Image
+                  src={tool}
+                  alt="tool"
+                  className="w-5 sm:w-7 inline-block mr-2 mt-3"
+                />
               </li>
             ))}
           </ul>

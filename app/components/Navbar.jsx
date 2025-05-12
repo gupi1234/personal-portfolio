@@ -2,7 +2,7 @@
 import { Ovo } from 'next/font/google';
 import { assets } from '@/assets/assets';
 import Image from 'next/image';
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const ovo = Ovo({
   subsets: ['latin'],
@@ -10,34 +10,60 @@ const ovo = Ovo({
 });
 
 const Navbar = () => {
+  const [isScroll, setIsScroll] = useState(false);
   const sideMenuref = useRef();
 
   const openMenu = () => {
-    sideMenuref.current.style.transform = 'translateX(0nrem)';
+    sideMenuref.current.style.transform = 'translateX(0rem)';
   };
   const closeMenu = () => {
-    sideMenuref.current.style.transform = 'translateX(16rem)';
+    sideMenuref.current.style.transform = 'translateX(100%)';
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScroll(true);
+      } else {
+        setIsScroll(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
       <div className=" fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
         <Image src={assets.header_bg_color} alt="err" className="w-full" />
       </div>
-      <nav className="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex justify-between items-center z-50">
+      <nav
+        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex justify-between items-center z-50 ${
+          isScroll ? 'bg-opacity-50 backdrop-blur-lg  shadow-sm' : ''
+        }`}
+      >
         <a href="#top">
           <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-pink-500 to-yellow-400 drop-shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer mr-14">
             GD.
           </h2>
 
           {/* <Image
-            src={assets.logo}
-            alt="err"
-            className="w-28 cursor-pointer mr-14"
-          /> */}
+              src={assets.logo}
+              alt="err"
+              className="w-28 cursor-pointer mr-14"
+            /> */}
         </a>
 
-        <ul className=" hidden md:flex gap-6 lg:gap-8 items-center rounded-full px-12 py-3  shadow-sm bg-opacity-50 text-[10px]  md:text-[12px] lg:text-[16px] z-10 backdrop-blur-md bg-white/20  ">
+        <ul
+          className={`hidden md:flex gap-6 lg:gap-8 items-center rounded-full px-12 py-3 
+            ${
+              isScroll
+                ? ''
+                : ' shadow-sm bg-opacity-50 text-[10px]  md:text-[12px] lg:text-[16px] z-10 backdrop-blur-md bg-white/20 '
+            }
+           `}
+        >
           <li>
             <a href="#top" className={`${ovo.className}`}>
               Home
@@ -93,27 +119,27 @@ const Navbar = () => {
               className="w-4 cursor-pointer"
             />
           </div>
-          <li>
+          <li onClick={closeMenu}>
             <a href="#top" className={`${ovo.className}`}>
               Home
             </a>
           </li>
-          <li>
+          <li onClick={closeMenu}>
             <a href="#about" className={`${ovo.className}`}>
               About me
             </a>
           </li>
-          <li>
+          <li onClick={closeMenu}>
             <a href="#services" className={`${ovo.className}`}>
               Services
             </a>
           </li>
-          <li>
+          <li onClick={closeMenu}>
             <a href="#work" className={`${ovo.className}`}>
               My Work
             </a>
           </li>
-          <li>
+          <li onClick={closeMenu}>
             <a href="#contact" className={`${ovo.className}`}>
               Contact me
             </a>

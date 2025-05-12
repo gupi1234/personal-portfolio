@@ -6,10 +6,13 @@ import edu_icon_dark from './edu-icon-dark.png';
 import project_icon from './project-icon.png';
 import project_icon_dark from './project-icon-dark.png';
 import vscode from './vscode.png';
-import firebase from './firebase.png';
+import chrome from './chrome.png';
+import tailwind from './tailwind.png';
+import react from './react.png';
+import material from './material.png';
 import figma from './figma.png';
 import git from './git.png';
-import mongodb from './mongodb.png';
+import github from './github.png';
 import right_arrow_white from './right-arrow-white.png';
 import logo from './logo.png';
 import logo_dark from './logo_dark.png';
@@ -47,10 +50,12 @@ export const assets = {
   project_icon,
   project_icon_dark,
   vscode,
-  firebase,
+  chrome,
   figma,
   git,
-  mongodb,
+  github,
+  react,
+  material,
   right_arrow_white,
   logo,
   logo_dark,
@@ -78,6 +83,7 @@ export const assets = {
   profile_photo,
   verified,
   logo_app,
+  tailwind,
 };
 
 export const workData = [
@@ -156,8 +162,11 @@ export const infoList = [
 
 export const toolsData = [
   assets.vscode,
-  assets.firebase,
-  assets.mongodb,
+  assets.github,
+  assets.chrome,
   assets.figma,
   assets.git,
+  assets.tailwind,
+  assets.react,
+  assets.material,
 ];

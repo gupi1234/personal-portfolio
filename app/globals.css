@@ -1,5 +1,43 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+:root {
+  --light-hover: #f0f0f0;
+  --dark-hover: #2a004a;
+  --dark-theme: #11001f;
+  --Black: 4px 4px 0px #00000080;
+  --White: 4px 4px 0px #fff;
+}
 
 * {
-  font-family: Outfit, Ovo;
+  font-family: 'Outfit', 'Ovo', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .font-custom {
+    font-family: 'Outfit', 'Ovo', sans-serif;
+  }
+  .font-ovo {
+    font-family: 'Ovo', serif;
+  }
+  .hover\:bg-lightHover:hover {
+    background-color: var(--light-hover);
+  }
+
+  .hover\:bg-darkHover:hover {
+    background-color: var(--dark-hover);
+  }
+  .shadow-blackCustom {
+    box-shadow: var(--Black);
+  }
+  .hover\:shadow-blackCustom:hover {
+    box-shadow: var(--Black);
+  }
+
+  .shadow-whiteCustom {
+    box-shadow: var(--White);
+  }
 }
