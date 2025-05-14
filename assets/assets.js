@@ -40,6 +40,9 @@ import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
 import verified from './verified.png';
 import logo_app from './logo_app.png';
+import Redesign from './Redesign.png';
+import responsive from './responsive.png';
+import ui_ux_design from './ui_ux_design.png';
 
 export const assets = {
   user_image,
@@ -84,56 +87,61 @@ export const assets = {
   verified,
   logo_app,
   tailwind,
+  Redesign,
+  responsive,
+  ui_ux_design,
 };
 
 export const workData = [
   {
-    title: 'Frontend project',
+    title: 'Frontend Project',
+    description: 'Web Design with React',
+    bgImage: '/decor_mistri.png',
+  },
+  {
+    title: 'Food Delivery App',
+    description: 'React-based Project',
+    bgImage: '/food_del.png',
+  },
+  {
+    title: 'Ride Booking App',
     description: 'Web Design',
-    bgImage: '/work-1.png',
+    bgImage: '/car_projects.png',
   },
   {
-    title: 'Geo based app',
-    description: 'Mobile App',
-    bgImage: '/work-2.png',
-  },
-  {
-    title: 'Photography site',
-    description: 'Web Design',
-    bgImage: '/work-3.png',
-  },
-  {
-    title: 'UI/UX designing',
-    description: 'UI/UX Design',
-    bgImage: '/work-4.png',
+    title: 'Social Media App',
+    description: 'React-based Project',
+    bgImage: '/social_media.png',
   },
 ];
 
 export const serviceData = [
   {
-    icon: assets.web_icon,
-    title: 'Web design',
-    description: 'Web development is the process of building, programming...',
-    link: '',
-  },
-  {
-    icon: assets.mobile_icon,
-    title: 'Mobile app',
+    icon: responsive,
+    title: 'Responsive Website Development',
     description:
-      'Mobile app development involves creating software for mobile devices...',
+      'Build modern, mobile-friendly websites using HTML, CSS, Tailwind CSS, and JavaScript for smooth and fast performance.',
     link: '',
   },
   {
-    icon: assets.ui_icon,
-    title: 'UI/UX design',
+    icon: assets.ui_ux_design,
+    title: 'UI/UX Implementation',
     description:
-      'UI/UX design focuses on creating a seamless user experience...',
+      'Convert Figma, Adobe XD, or design files into fully functional and pixel-perfect front-end code using Tailwind or Material UI.',
     link: '',
   },
   {
-    icon: assets.graphics_icon,
-    title: 'Graphics design',
-    description: 'Creative design solutions to enhance visual communication...',
+    icon: assets.Redesign,
+    title: 'Website Redesign & Optimization',
+    description:
+      'Improve the UI, performance, and responsiveness of existing websites to enhance user experience and reduce load time..',
+    link: '',
+  },
+  {
+    icon: assets.react,
+    title: 'React.js Application Development',
+    description:
+      'Develop dynamic single-page applications (SPAs) using React and Material UI with reusable components and clean architecture...',
     link: '',
   },
 ];

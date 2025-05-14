@@ -40,4 +40,7 @@ html {
   .shadow-whiteCustom {
     box-shadow: var(--White);
   }
+  .grid-cols-autoFit {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 }

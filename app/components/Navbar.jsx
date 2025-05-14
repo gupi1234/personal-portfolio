@@ -97,7 +97,7 @@ const Navbar = () => {
           </button>
           <a
             href="#contact"
-            className={`hidden md:flex gap-3 items-center px-6 py-2 border border-gray-300 ml-4 rounded-full ${ovo.className}`}
+            className={`hidden lg:flex gap-3 items-center px-6 py-2 border border-gray-300 ml-4 rounded-full ${ovo.className}`}
           >
             Contact <Image src={assets.arrow_icon} alt="err" className=" w-3" />
           </a>
