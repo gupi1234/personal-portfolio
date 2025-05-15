@@ -10,7 +10,7 @@ const ovo = Ovo({
 
 const Header = () => {
   return (
-    <div className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col justify-center items-center gap-4">
+    <div className="w-11/12 max-w-3xl text-center pt-20 mx-auto h-screen flex flex-col justify-center items-center gap-4">
       <div className="relative w-40 h-40">
         <Image
           src={assets.profile_photo}

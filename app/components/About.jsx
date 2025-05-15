@@ -10,7 +10,7 @@ const ovo = Ovo({
 
 const About = () => {
   return (
-    <div id="about" className="w-full  px-[12%] py-2 scroll-mt-20">
+    <div id="about" className="w-full  px-[12%] py-16 scroll-mt-20">
       <h4 className={`text-center mb-2 text-lg ${ovo.className}`}>
         Introductions
       </h4>
