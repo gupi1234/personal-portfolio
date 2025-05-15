@@ -66,11 +66,7 @@ const About = () => {
                 key={index}
                 className="flex items-center justify-center w-8 sm:w-12 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:bg-lightHover hover:translate-y-1 duration-500"
               >
-                <Image
-                  src={tool}
-                  alt="tool"
-                  className="w-5 sm:w-7 inline-block mr-2 mt-3"
-                />
+                <Image src={tool} alt="tool" className="w-5 sm:w-7" />
               </li>
             ))}
           </ul>

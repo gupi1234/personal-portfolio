@@ -94,11 +94,6 @@ export const assets = {
 
 export const workData = [
   {
-    title: 'Frontend Project',
-    description: 'Web Design with React',
-    bgImage: '/decor_mistri.png',
-  },
-  {
     title: 'Food Delivery App',
     description: 'React-based Project',
     bgImage: '/food_del.png',
@@ -112,6 +107,11 @@ export const workData = [
     title: 'Social Media App',
     description: 'React-based Project',
     bgImage: '/social_media.png',
+  },
+  {
+    title: 'Frontend Project',
+    description: 'Web Design with React',
+    bgImage: '/decor_mistri.png',
   },
 ];
 
