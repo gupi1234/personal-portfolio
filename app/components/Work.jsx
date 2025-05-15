@@ -31,7 +31,7 @@ const Work = () => {
         {workData.map((project, index) => (
           <div
             key={index}
-            className="aspect-[3/2] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer  group border-2 border-gray-500"
+            className="aspect-[5/3] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer  group border-2 border-gray-500"
             style={{ backgroundImage: `url(${project.bgImage})` }}
           >
             <div className="bg-white border-1 border-rose-500 w-10/12 rounded-md absolute  bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
