@@ -1,5 +1,6 @@
 'use client';
 import { assets } from '@/assets/assets';
+import { darkMode } from '@/tailwind.config';
 import { Ovo } from 'next/font/google';
 import Image from 'next/image';
 import React, { useState } from 'react';
@@ -9,7 +10,7 @@ const ovo = Ovo({
   weight: '400',
 });
 
-const Contact = () => {
+const Contact = ({ isDarkMode }) => {
   const [result, setResult] = useState('');
 
   const onSubmit = async (event) => {
@@ -38,7 +39,9 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="w-full  px-[12%] py-10 scroll-mt-20 bg-[url('/footer-bg-color.png')] bg-no-repeat bg-center bg-[length:90%_auto]"
+      className={`w-full  px-[12%] py-10 scroll-mt-20 bg-[url('/footer-bg-color.png')] bg-no-repeat bg-center bg-[length:100%_auto] ${
+        isDarkMode ? 'bg-none' : ''
+      }`}
     >
       <h4 className={`text-center mb-2 text-lg ${ovo.className}`}>
         Connect With me
@@ -59,14 +62,22 @@ const Contact = () => {
             placeholder="Enter your name"
             required
             name="name"
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-lg bg-white"
+            className={`flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-lg placeholder:text-gray-700 ${
+              isDarkMode
+                ? 'bg-darkHover border-white/90 placeholder:text-white'
+                : 'bg-white'
+            }`}
           />
           <input
             type="email"
             placeholder="Enter your email"
             required
             name="email"
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            className={`flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-lg placeholder:text-gray-700 ${
+              isDarkMode
+                ? 'bg-darkHover border-white/90 placeholder:text-white'
+                : 'bg-white'
+            }`}
           />
         </div>
         <textarea
@@ -74,11 +85,17 @@ const Contact = () => {
           placeholder="Enter Your message"
           required
           name="message"
-          className="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md mb-6 bg-white"
-        ></textarea>
+          className={`w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md mb-6 placeholder:text-gray-700 ${
+            isDarkMode
+              ? 'bg-darkHover border-white/90 placeholder:text-white'
+              : 'bg-white'
+          }`}
+        />
         <button
           type="submit"
-          className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-gray-600 duration-500"
+          className={`py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-gray-600 duration-500 ${
+            isDarkMode ? 'bg-transparent border-[0.5px] hover:bg-darkHover' : ''
+          }`}
         >
           Submit now{' '}
           <Image src={assets.right_arrow_white} alt="err" className="w-4" />

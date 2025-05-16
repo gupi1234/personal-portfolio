@@ -8,7 +8,7 @@ const ovo = Ovo({
   weight: '400',
 });
 
-const About = () => {
+const About = ({ isDarkMode }) => {
   return (
     <div id="about" className="w-full  px-[12%] py-16 scroll-mt-20">
       <h4 className={`text-center mb-2 text-lg ${ovo.className}`}>
@@ -40,22 +40,38 @@ const About = () => {
             {infoList.map(({ icon, iconDark, title, description }, index) => (
               <li
                 key={index}
-                className="border-2 border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-blackCustom"
+                className={`rounded-xl p-6 cursor-pointer hover:-translate-y-1 duration-500  ${
+                  isDarkMode
+                    ? 'border-white border-2 shadow-whiteCustom hover:bg-darkHover  '
+                    : 'hover:shadow-blackCustom border-2 border-gray-400 hover:bg-lightHover '
+                }`}
               >
                 <Image
-                  src={icon}
+                  src={isDarkMode ? iconDark : icon}
                   alt={title}
                   className="w-6 h-6 inline-block mr-2 mt-3"
                 />
-                <h3 className="my-4 font-semibold text-gray-700 ">{title}</h3>
-                <p className="text-gray-600 text-sm hover:text-gray-800 duration-300">
+                <h3
+                  className={`my-4 font-semibold text-gray-700 ${
+                    isDarkMode ? ' dark:text-white' : ''
+                  }`}
+                >
+                  {title}
+                </h3>
+                <p
+                  className={`text-gray-600 text-sm  duration-300 ${
+                    isDarkMode ? 'text-white/80' : 'hover:text-gray-800'
+                  }`}
+                >
                   {description}
                 </p>
               </li>
             ))}
           </ul>
           <h4
-            className="my-6 text-gray-700 font-bold "
+            className={`my-6 text-gray-700 font-bold  ${
+              isDarkMode ? 'text-white/80' : ''
+            }`}
             style={{ fontFamily: 'Ovo', sansSerif: 'sans-serif' }}
           >
             Tools i Use
