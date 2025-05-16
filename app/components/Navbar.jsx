@@ -10,7 +10,7 @@ const ovo = Ovo({
   weight: '400',
 });
 
-const Navbar = () => {
+const Navbar = ({ isDarkMode, setIsDarkMode }) => {
   const [isScroll, setIsScroll] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [menuVisible, setMenuVisible] = useState(false);
@@ -46,12 +46,14 @@ const Navbar = () => {
 
   return (
     <>
-      <div className=" fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
+      <div className=" fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden">
         <Image src={assets.header_bg_color} alt="err" className="w-full" />
       </div>
       <nav
         className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex justify-between items-center z-50 ${
-          isScroll ? 'bg-opacity-50 backdrop-blur-lg  shadow-sm' : ''
+          isScroll
+            ? 'bg-opacity-50 backdrop-blur-lg shadow-sm dark:dg-darkTheme dark:shadow-white/20'
+            : ''
         }`}
       >
         <a href="#top">
@@ -64,7 +66,11 @@ const Navbar = () => {
           className={`hidden md:flex gap-6 lg:gap-8 items-center rounded-full px-12 py-3 ${
             isScroll
               ? ''
-              : ' shadow-sm bg-opacity-50 text-[10px]  md:text-[12px] lg:text-[16px] z-10 backdrop-blur-md bg-white/20 '
+              : ' shadow-sm bg-opacity-50 text-[10px]  md:text-[12px] lg:text-[16px] z-10 backdrop-blur-md bg-white/20   '
+          } ${
+            isDarkMode
+              ? 'dark:border dark:border-white/50 dark:bg-transparent'
+              : ''
           }`}
         >
           <li>
@@ -95,27 +101,48 @@ const Navbar = () => {
         </ul>
 
         <div className="flex items-center gap-4">
-          <button>
-            <Image src={assets.moon_icon} alt="err" className="w-6" />
+          <button
+            onClick={() => {
+              setIsDarkMode((prev) => !prev);
+            }}
+            className="cursor-pointer"
+          >
+            <Image
+              src={isDarkMode ? assets.sun_icon : assets.moon_icon}
+              alt="err"
+              className="w-6"
+            />
           </button>
           <a
             href="#contact"
-            className={`hidden lg:flex gap-3 items-center px-6 py-2 border border-gray-300 ml-4 rounded-full ${ovo.className}`}
+            className={`hidden lg:flex gap-3 items-center px-6 py-2 border border-gray-300 ml-4 rounded-full ${
+              ovo.className
+            }  ${isDarkMode ? 'dark:border-white/50' : ''} `}
           >
-            Contact <Image src={assets.arrow_icon} alt="err" className=" w-3" />
+            Contact
+            <Image
+              src={isDarkMode ? assets.arrow_icon_dark : assets.arrow_icon}
+              alt="err"
+              className=" w-3"
+            />
           </a>
           <button
             className="block md:hidden ml-3"
             onClick={() => setIsMenuOpen(true)}
           >
-            <Image src={assets.menu_black} alt="err" className="w-6" />
+            <Image
+              src={isDarkMode ? assets.menu_white : assets.menu_black}
+              alt="err"
+              className="w-6"
+            />
           </button>
         </div>
 
         {/* MOBILE MENU */}
         {menuVisible && (
           <ul
-            className="flex md:hidden flex-col gap-4 py-20 px-10 fixed right-0 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition-transform duration-500 ease-in-out"
+            className={`flex md:hidden flex-col gap-4 py-20 px-10 fixed right-0 top-0 bottom-0 w-64 z-50 h-screen transition-transform duration-500 ease-in-out
+            ${isDarkMode ? 'bg-[#191752]' : 'bg-rose-50'}`}
             style={{
               transform: isAnimatingOpen ? 'translateX(0)' : 'translateX(100%)',
               pointerEvents: isAnimatingOpen ? 'auto' : 'none',
@@ -130,7 +157,7 @@ const Navbar = () => {
               onKeyDown={(e) => e.key === 'Enter' && setIsMenuOpen(false)}
             >
               <Image
-                src={assets.close_black}
+                src={isDarkMode ? assets.close_white : assets.close_black}
                 alt="Close menu"
                 width={16}
                 height={16}
