@@ -108,7 +108,7 @@ const Contact = ({ isDarkMode }) => {
             }}
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ delay: 1.1, duration: 0.6 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
           />
 
           {/* Email Input */}
@@ -124,7 +124,7 @@ const Contact = ({ isDarkMode }) => {
             }`}
             initial={{ x: 50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ delay: 1.1, duration: 0.6 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
           />
         </div>
 
@@ -143,9 +143,6 @@ const Contact = ({ isDarkMode }) => {
             hidden: { opacity: 0, y: 20 },
             visible: { opacity: 1, y: 0 },
           }}
-          initial={{ y: 100, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
         />
 
         {/* Submit Button */}
