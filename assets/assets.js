@@ -154,7 +154,7 @@ export const infoList = [
   {
     icon: assets.code_icon,
     iconDark: assets.code_icon_dark,
-    title: 'Languages',
+    title: 'Skills',
     description:
       'HTML, CSS, JavaScript, React.js, Material UI, Tailwind CSS, Formik validation, and more',
   },
