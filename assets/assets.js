@@ -97,21 +97,25 @@ export const workData = [
     title: 'Food Delivery App',
     description: 'React-based Project',
     bgImage: '/food_del.png',
+    link: 'https://food-delevery-hazel.vercel.app/',
   },
   {
     title: 'Ride Booking App',
     description: 'Web Design',
     bgImage: '/car_projects.png',
+    link: 'https://car-project-plum.vercel.app/',
   },
   {
     title: 'Social Media App',
     description: 'React-based Project',
     bgImage: '/social_media.png',
+    link: 'https://github.com/gupi1234/Addahub',
   },
   {
     title: 'Frontend Project',
     description: 'Web Design with React',
     bgImage: '/decor_mistri.png',
+    link: 'https://github.com/manishdotsoft/DecorMistri',
   },
 ];
 
@@ -121,7 +125,7 @@ export const serviceData = [
     title: 'Responsive Website Development',
     description:
       'Build modern, mobile-friendly websites using HTML, CSS, Tailwind CSS, and JavaScript for smooth and fast performance.',
-    link: '',
+    link: 'https://www.w3schools.com/html/html_responsive.asp',
   },
   {
     icon: assets.ui_ux_design,
@@ -142,7 +146,7 @@ export const serviceData = [
     title: 'React.js Application Development',
     description:
       'Develop dynamic single-page applications (SPAs) using React and Material UI with reusable components and clean architecture...',
-    link: '',
+    link: 'https://react.dev/learn/creating-a-react-app',
   },
 ];
 
