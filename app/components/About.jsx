@@ -16,7 +16,6 @@ const About = ({ isDarkMode }) => {
         Introductions
       </h4>
       <h2 className={`text-center text-5xl ${ovo.className}`}>About me</h2>
-
       <div className="flex flex-col lg:flex-row gap-20 mt-20 items-center">
         {/* Profile Image */}
         <div>
