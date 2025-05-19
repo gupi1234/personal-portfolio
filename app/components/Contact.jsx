@@ -1,4 +1,3 @@
-'use client';
 import { assets } from '@/assets/assets';
 import { Ovo } from 'next/font/google';
 import Image from 'next/image';
@@ -47,18 +46,18 @@ const Contact = ({ isDarkMode }) => {
       {/* Heading */}
       <motion.h4
         className={`text-center mb-2 text-lg ${ovo.className}`}
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
       >
         Connect With me
       </motion.h4>
 
       <motion.h2
         className={`text-center text-5xl ${ovo.className}`}
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.5 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
       >
         Get in touch
       </motion.h2>
@@ -67,8 +66,8 @@ const Contact = ({ isDarkMode }) => {
       <motion.p
         className={`text-center max-w-2xl mx-auto mt-5 mb-12 ${ovo.className}`}
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.7 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
       >
         I'm always open to discussing new projects, creative ideas, or
         opportunities to be part of your vision. Feel free to reach out through
@@ -79,16 +78,9 @@ const Contact = ({ isDarkMode }) => {
       <motion.form
         onSubmit={onSubmit}
         className="max-w-2xl mx-auto"
-        initial="hidden"
-        whileInView="visible"
-        variants={{
-          hidden: {},
-          visible: {
-            transition: {
-              staggerChildren: 0.3,
-            },
-          },
-        }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.6 }}
       >
         <div className="grid grid-cols-auto gap-6 mt-10 mb-8">
           {/* Name Input */}
@@ -97,18 +89,14 @@ const Contact = ({ isDarkMode }) => {
             placeholder="Enter your name"
             required
             name="name"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
             className={`flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-lg placeholder:text-gray-700 ${
               isDarkMode
                 ? 'bg-darkHover border-white/90 placeholder:text-white'
                 : 'bg-white'
             }`}
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            initial={{ x: -50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
           />
 
           {/* Email Input */}
@@ -117,14 +105,14 @@ const Contact = ({ isDarkMode }) => {
             placeholder="Enter your email"
             required
             name="email"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
             className={`flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-lg placeholder:text-gray-700 ${
               isDarkMode
                 ? 'bg-darkHover border-white/90 placeholder:text-white'
                 : 'bg-white'
             }`}
-            initial={{ x: 50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
           />
         </div>
 
@@ -134,31 +122,27 @@ const Contact = ({ isDarkMode }) => {
           placeholder="Enter your message"
           required
           name="message"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.9 }}
           className={`w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md mb-6 placeholder:text-gray-700 ${
             isDarkMode
               ? 'bg-darkHover border-white/90 placeholder:text-white'
               : 'bg-white'
           }`}
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0 },
-          }}
         />
 
         {/* Submit Button */}
         <motion.button
           type="submit"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 1 }}
           className={`py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-gray-600 duration-500 ${
             isDarkMode ? 'bg-transparent border-[0.5px] hover:bg-darkHover' : ''
           }`}
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.3 }}
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0 },
-          }}
         >
-          Submit now{' '}
+          Submit now
           <Image src={assets.right_arrow_white} alt="arrow" className="w-4" />
         </motion.button>
 
