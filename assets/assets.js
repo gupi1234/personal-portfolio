@@ -106,10 +106,10 @@ export const workData = [
     link: 'https://car-project-plum.vercel.app/',
   },
   {
-    title: 'Social Media App',
-    description: 'React-based Project',
-    bgImage: '/social_media.png',
-    link: 'https://github.com/gupi1234/Addahub',
+    title: 'Music-app',
+    description: 'JavaScript-based Project',
+    bgImage: '/music-2.png',
+    link: 'https://music-app-bay-one.vercel.app',
   },
   {
     title: 'Frontend Project',
