@@ -24,13 +24,17 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    const root = document.documentElement;
+
     if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.theme = 'dark';
+      root.classList.add('dark');
     } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.theme = 'light';
+      root.classList.remove('dark');
     }
+
+    try {
+      localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    } catch (_) {}
   }, [isDarkMode]);
 
   return (
