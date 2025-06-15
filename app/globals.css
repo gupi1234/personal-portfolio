@@ -6,11 +6,13 @@
   --dark-theme: #080225;
   --Black: 4px 4px 0px #000000;
   --White: 4px 4px 0px #e9e9e9;
+  --bg-color: #ffffff; /* default light bg */
+  --text-color: #000000; /* default light text */
 }
 
 .dark {
-  --bg-color: var(--dark-theme);
-  --text-color: #fff;
+  --bg-color: #080225;
+  --text-color: #ffffff;
   --dark-hover: #05013a;
 }
 
@@ -21,7 +23,14 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Optional: target dark body directly for older browsers */
+.dark body {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
@@ -33,6 +42,7 @@ body {
   .font-ovo {
     font-family: 'Ovo', serif;
   }
+
   .hover\:bg-lightHover:hover {
     background-color: var(--light-hover);
   }
@@ -40,12 +50,15 @@ body {
   .hover\:bg-darkHover:hover {
     background-color: var(--dark-hover);
   }
+
   .shadow-blackCustom {
     box-shadow: var(--Black);
   }
+
   .shadow-whiteCustom {
-    box-shadow: 4px 4px 0px #fff;
+    box-shadow: var(--White);
   }
+
   .hover\:shadow-blackCustom:hover {
     box-shadow: var(--Black);
   }
