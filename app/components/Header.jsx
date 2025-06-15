@@ -68,7 +68,7 @@ const Header = ({ isDarkMode }) => {
         <motion.a
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1 }}
+          transition={{ duration: 0.6 }}
           href="#contact"
           className={`px-10 py-3 border rounded-full border-white bg-black text-white flex items-center gap-2  
             ${isDarkMode ? 'dark:bg-transparent' : ''}`}
@@ -80,7 +80,7 @@ const Header = ({ isDarkMode }) => {
         <motion.a
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
+          transition={{ duration: 0.6 }}
           href="/resume.pdf"
           download={true}
           className={`px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 ${
