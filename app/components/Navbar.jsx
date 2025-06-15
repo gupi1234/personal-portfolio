@@ -50,11 +50,13 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
         <Image src={assets.header_bg_color} alt="err" className="w-full" />
       </div>
       <nav
-        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex justify-between items-center z-50 ${
-          isScroll
-            ? 'bg-opacity-50 backdrop-blur-lg shadow-sm dark:dg-darkTheme dark:shadow-white/20'
-            : ''
-        }`}
+        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex justify-between items-center z-50 transition-all duration-300
+    ${
+      isScroll
+        ? 'bg-white/70 dark:bg-transparent backdrop-blur-md shadow-sm dark:shadow-white/20'
+        : 'bg-transparent'
+    }
+  `}
       >
         <a href="#top">
           <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-pink-500 to-yellow-400 drop-shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer mr-14">
