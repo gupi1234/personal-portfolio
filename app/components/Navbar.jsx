@@ -86,6 +86,11 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             </a>
           </li>
           <li>
+            <a href="#experience" className={`${ovo.className}`}>
+              Experience
+            </a>
+          </li>
+          <li>
             <a href="#services" className={`${ovo.className}`}>
               Services
             </a>
@@ -176,6 +181,12 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                 About me
               </a>
             </li>
+            <li onClick={() => setIsMenuOpen(false)}>
+              <a href="#experience" className={ovo.className}>
+                Experience
+              </a>
+            </li>
+
             <li onClick={() => setIsMenuOpen(false)}>
               <a href="#services" className={ovo.className}>
                 Services

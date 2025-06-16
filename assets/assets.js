@@ -43,8 +43,12 @@ import logo_app from './logo_app.png';
 import Redesign from './Redesign.png';
 import responsive from './responsive.png';
 import ui_ux_design from './ui_ux_design.png';
+import internship from './internship.png';
+import freelance from './freelance-work.png';
 
 export const assets = {
+  internship,
+  freelance,
   user_image,
   code_icon,
   code_icon_dark,
@@ -91,6 +95,25 @@ export const assets = {
   responsive,
   ui_ux_design,
 };
+
+export const experienceData = [
+  {
+    title: 'Freelance Front-End Developer',
+    company: 'Private Client',
+    duration: 'Oct 2024 - nov 2024',
+    description:
+      'Developed a ride booking web application using HTML, Tailwind CSS, plain CSS, and JavaScript with a clean, mobile-first responsive layout.',
+    image: assets.freelance,
+  },
+  {
+    title: 'Front-End Developer Intern',
+    company: 'DotSoft Business Solutions Pvt Ltd',
+    duration: 'Nov 2024 - Apr 2025',
+    description:
+      'Worked on responsive web interfaces using React JS, collaborated with designers, and participated in agile development.',
+    image: assets.internship,
+  },
+];
 
 export const workData = [
   {
